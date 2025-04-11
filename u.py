@@ -95,7 +95,7 @@ def run_quiz():
 
     if st.button("Submit"):
         for i, selected in enumerate(selections):
-            
+            # Map back selected text to DISC letter
             for opt_text, disc_letter in questions[i]['options']:
                 if selected == opt_text:
                     score[disc_letter] += 1
