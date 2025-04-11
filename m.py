@@ -94,6 +94,9 @@ def run_quiz():
         selections.append(selected)
 
     if st.button("Submit"):
+        unanswered = any(sel is None for sel in selections)
+        if unanswered:
+            st.error("please answerd all the questions before submitting")
         for i, selected in enumerate(selections):
             
             for opt_text, disc_letter in questions[i]['options']:
